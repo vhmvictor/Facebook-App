@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head><base href="../../../">
+    	<meta charset="utf-8"/>
+        <title>Kampana Digital - Interesses Facebook</title>
+        <meta name="description" content="Single and group record selection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/> 
+		<link href="plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="css/style.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css"/>
+		<link href="css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css"/>
+		<link href="css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css"/>
+		<link href="css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css"/>      
+		<link rel="shortcut icon" href="https://cdn.kampana.digital/wp-content/uploads/2020/09/cropped-favicon-32x32.png" sizes="32x32">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+		<style>
+			* {box-sizing: border-box}
+			.container {
+			  width: 100%;
+			  background-color: #ddd;
+			  margin-bottom: 50px;
+			}
+			.skills {
+			  text-align: right;
+			  padding-bottom: 7px;
+			  color: white;
+			  background-color: #4CAF50;
+			}
+			.footer {
+			position: fixed;
+			margin-top: 50px;
+			bottom: 0;
+			width: 100%;
+			background: none;
+			line-height: 2;
+			text-align: center;
+			color: #fff;
+			font-size: 14px;
+			}
+			</style>
+	</head>
+	<body style="background-image: url('https://cdn.kampana.digital/wp-content/uploads/2020/09/slide-bg.png')">
+	<div class="container" style="background-color:transparent;">
+		<div class="card card-custom gutter-b mt-8">
+			<div class="card-header flex-wrap border-0 pt-6 pb-0">
+				<div class="card-title">
+					<h3 class="card-label">
+						Interesses Secretos Facebook - Kampana Digital
+						<span class="d-block text-muted pt-2 font-size-sm">Percepções de Interesses para anúncios na plataforma do Facebook</span>
+					</h3>
+				</div>
+				<div class="col-1 card-title ml-40">
+					<a href="https://kampana.digital" target="_blank">
+						<img src="https://cdn.kampana.digital/wp-content/uploads/2020/09/logo.png" alt="kampana-logo" width="250px">
+					</a>
+				</div>
+				<div class="card-toolbar">
+				</div>
+			</div>
+			<div class="card-body">
+		<div class="mb-7">
+			<div class="row align-items-center">
+				<div class="col-lg-5 col-xl-5">
+					<div class="input-icon">
+						<input type="text" class="form-control" placeholder="Digite o tema de interesse..." id="kt_datatable_search_query"/>
+						<span><i class="flaticon2-search-1 text-muted"></i></span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search">
+					<button style="color:#fff; background-color:#AB21FD" type="button" id="search_button" class="btn btn-light px-6 font-weight-bold">
+						Pesquisar
+					</button>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search_reflash">
+					<button style="color:#fff; background-color:#AB21FD" type="button" id="reflash_button" class="btn btn-light px-6 font-weight-bold">
+						Nova pesquisa
+					</button>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 lg-0 mt-5 collapse" id="kt_datatable_selected_results">
+					<span style="color:#fff; background-color:#209e00" class="btn btn-light-success px-6 font-weight-bold" id="search_result">0</span>
+				</div>
+			</div>
+		</div>
+			<div class="mt-10 mb-5 collapse" id="kt_datatable_group_action_form">
+				<div class="d-flex align-items-center">
+					<div class="font-weight-bold text-danger mr-3">
+						Itens selecionados: <span id="kt_datatable_selected_records">0</span>
+					</div>
+					<button class="btn btn-sm" style="background-color: rgb(200, 204, 204);" type="button" data-toggle="modal" data-target="#kt_datatable_fetch_modal">
+						Interesses Selecionados
+					</button>
+				</div>
+			</div>
+			<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+		</div>
+		</div>
+		<div class="modal fade" id="kt_datatable_fetch_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header" style="color:#fff;background-color:#AB21FD">
+						<h5 class="modal-title" id="exampleModalLabel" style="color:#fff">Interesses Selecionados</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<i aria-hidden="true" class="ki ki-close"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="scroll" data-scroll="true" data-height="200">
+							<ul id="kt_datatable_fetch_display"></ul>
+						</div>
+					</div>
+					<div class="modal-footer justify-content-center">
+						<button style="background-color:#AB21FD" type="button" class="btn btn-light-danger font-weight-bold" data-dismiss="modal">
+							<span style="color:#fff">Fechar</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<a href="https://kampana.digital" target="_blank" style="color: white;">© 2020 Kampana Negócios Digitais</a>
+	</div>
+		<script src="plugins/global/plugins.bundle.js"></script>
+		<script src="plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="js/scripts.bundle.js"></script>
+		<script>
+			let datatable;
+			let initKtDatatable = function(url) {
+				console.log(url)
+				datatable = $('#kt_datatable').KTDatatable({
+					data: {
+						type: 'remote',
+						source: {
+						read: {
+							url: url,
+							method: 'GET',
+						},
+						},
+						pageSize: 10,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false,
+					},
+					layout: {
+						scroll: false,
+						footer: false 
+					},
+					sortable: true,
+					pagination: true,
+					columns: [{
+						field: 'id',
+						title: '#',
+						sortable: false,
+						width: 20,
+						selector: {
+							class: ''
+						},
+						textAlign: 'center',
+					}, {
+						field: 'name',
+						title: 'Interesse',
+						textAlign: 'left',
+						width: 230,
+					}, {
+						field: 'audience_size',
+						title: 'Tamanho da Audiência',
+						width: 300,
+						template: function(row) {
+							return '\
+								<div class="skills" style="width: '+ row.audience_size/1000000 + '%"></div>\
+								<small style="font-weight: 900">' + (row.audience_size).toLocaleString('pt-BR') + '</small>\
+							';
+						}
+					}, {
+						field: 'topic',
+						title: 'Tópico',
+						width: 200,
+						textAlign: 'left',
+					}, {
+						field: 'Actions',
+						title: '',
+						sortable: false,
+						width: 125,
+						overflow: 'visible',
+						textAlign: 'center',
+						autoHide: false,
+						template: function(row) {
+							return '\
+								<div class="dropdown dropdown-inline">\
+									<span><i id="copy_button" value ="'+row.name+'"class="fa fa-copy" style="cursor: pointer; color: rgb(140, 141, 141);"></i></span>\
+									<a href="https://www.google.com.br/search?source=hp&ei=HCOQX-C-O9G95OUP99ma8AE&q=' + row.name + '" target="_blank">\
+										<img alt="google" src="https://i1.wp.com/www.androidawareness.com/wp-content/uploads/2018/10/google-icon.png?fit=500%2C500" width="50" height="50">\
+									</a>\
+									<a href="https://web.facebook.com/search/top/?q=' + row.name + '" target="_blank">\
+										<img alt="google" src="https://i.pinimg.com/originals/4f/6e/cc/4f6ecc0091be306bc51e4c0c554ee6e4.png" width=30" height="30">\
+									</a>\
+								</div>\
+							';
+						},
+					}],
+				});
+				datatable.on(
+					'datatable-on-check datatable-on-uncheck',
+					function(e) {
+						var checkedNodes = datatable.rows('.datatable-row-active').nodes();
+						var count = checkedNodes.length;
+						$('#kt_datatable_selected_records').html(count);
+						if (count > 0) {
+							$('#kt_datatable_group_action_form').collapse('show');
+						} else {
+							$('#kt_datatable_group_action_form').collapse('hide');
+						}
+					});
+				//
+				$(document).on('click', '#copy_button', function(){
+					let name = $(this).attr('value');
+					let el = document.createElement('textarea');
+					el.value = name;
+					document.body.appendChild(el);
+					el.select();
+					document.execCommand('copy');
+					document.body.removeChild(el);
+					swal.fire({
+						icon: 'success',
+						text: JSON.stringify(name) + " copiado",
+					});
+				});
+				$('#kt_datatable_fetch_modal').on('show.bs.modal', function(e) {
+					var selected_name = datatable.rows('.datatable-row-active').nodes();
+					var ids = datatable.rows('.datatable-row-active').
+					nodes().
+					find('.checkbox > [type="checkbox"]').
+					map(function(i, chk) {
+						return $(chk).val();
+					});
+					var c = document.createDocumentFragment();
+					for (var i = 0; i < ids.length; i++) {
+						var li = document.createElement('li');
+						li.setAttribute('data-id', ids[i]);
+						li.innerHTML = "<div style='margin-bottom: 10px'>" + selected_name[i].childNodes[1].innerText + "</div>";
+						c.appendChild(li);
+					}
+					$('#kt_datatable_fetch_display').append(c);
+				}).on('hide.bs.modal', function(e) {
+					$('#kt_datatable_fetch_display').empty();
+				});
+			};
+			//
+			$(document).ready(function() {
+				$('#kt_datatable_search').collapse('show');
+				$('#search_button').on('click', async function() {
+					$('#kt_datatable_search').collapse('hide');
+					try {
+						$('#kt_datatable_search_query').prop('disabled', true);
+						let search_input = $('#kt_datatable_search_query').val()
+						let authorization = (await axios.get("https://graph.facebook.com/oauth/access_token?client_id=1785979331549869&client_secret=7d7b46a060e5679edc109d48ef992813&grant_type=client_credentials")).data;
+						let interesses_url = "https://graph.facebook.com/search?type=adinterest&q=[" + search_input + "]&limit=10000&locale=pt_BR&access_token=" + authorization.access_token + "";
+						let count = (await axios.get(interesses_url)).data;
+						if (count.data) {
+							$('#kt_datatable_search_reflash').collapse('show');
+							$('#search_result').html(count.data.length + " Interesses Encontrados!");
+							if (count.data.length > 0) {
+								$('#kt_datatable_selected_results').collapse('show');
+							} else {
+								$('#kt_datatable_selected_results').collapse('hide');
+							};
+							initKtDatatable(interesses_url);
+							$('#reflash_button').on('click', function() {
+								window.location.reload();
+							});
+						};
+					} catch (e) {
+						console.log(e);
+					};
+				});
+			});
+		</script>
+	</body>
+</html>

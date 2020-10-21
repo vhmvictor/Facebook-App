@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head><base href="../../../">
+    	<meta charset="utf-8"/>
+        <title>Kampana Digital - Interesses Facebook</title>
+        <meta name="description" content="Single and group record selection"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/> 
+		<link href="public/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="public/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="public/css/style.bundle.css" rel="stylesheet" type="text/css"/>
+		<link href="public/css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css"/>
+		<link href="public/css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css"/>
+		<link href="public/css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css"/>
+		<link href="public/css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css"/>      
+		<link rel="shortcut icon" href="https://cdn.kampana.digital/wp-content/uploads/2020/09/cropped-favicon-32x32.png" sizes="32x32">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+	</head>
+	<body style="background-image: url('https://cdn.kampana.digital/wp-content/uploads/2020/09/slide-bg.png')">
+	<div class="container">
+		<div class="card card-custom gutter-b mt-8">
+			<div class="card-header flex-wrap border-0 pt-6 pb-0">
+				<div class="card-title">
+					<h3 class="card-label">
+						Interesses Secretos Facebook - Kampana Digital
+						<span class="d-block text-muted pt-2 font-size-sm">Percepções de Interesses para anúncios na plataforma do Facebook</span>
+					</h3>
+				</div>
+				<div class="col-1 card-title ml-40">
+					<img src="https://cdn.kampana.digital/wp-content/uploads/2020/09/logo.png" alt="kampana-logo" width="250px">
+				</div>
+				<div class="card-toolbar">
+				</div>
+			</div>
+			<div class="card-body">
+		<div class="mb-7">
+			<div class="row align-items-center">
+				<div class="col-lg-5 col-xl-5">
+					<div class="input-icon">
+						<input type="text" class="form-control" placeholder="Digite o tema de interesse..." id="kt_datatable_search_query"/>
+						<span><i class="flaticon2-search-1 text-muted"></i></span>
+					</div>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search">
+					<button style="color:#fff; background-color:#AB21FD" type="button" id="search_button" class="btn btn-light px-6 font-weight-bold">
+						Pesquisar
+					</button>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search_reflash">
+					<button type="button" id="reflash_button" class="btn btn-light-danger px-6 font-weight-bold">
+						Nova pesquisa
+					</button>
+				</div>
+				<div class="col-lg-3 col-xl-4 mt-5 lg-0 mt-5 collapse" id="kt_datatable_selected_results">
+					<span style="color:#fff; background-color:#209e00" class="btn btn-light-success px-6 font-weight-bold" id="search_result">0</span>
+				</div>
+			</div>
+		</div>
+			<div class="mt-10 mb-5 collapse" id="kt_datatable_group_action_form">
+				<div class="d-flex align-items-center">
+					<div class="font-weight-bold text-danger mr-3">
+						Itens selecionados: <span id="kt_datatable_selected_records">0</span>
+					</div>
+					<button class="btn btn-sm btn-success" type="button" data-toggle="modal" data-target="#kt_datatable_fetch_modal">
+						Copiar nomes
+					</button>
+				</div>
+			</div>
+			<div class="datatable datatable-bordered datatable-head-custom" id="kt_datatable"></div>
+		</div>
+		</div>
+		<div class="modal fade" id="kt_datatable_fetch_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Itens Selecionados</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<i aria-hidden="true" class="ki ki-close"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="scroll" data-scroll="true" data-height="200">
+							<ul id="kt_datatable_fetch_display"></ul>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light-danger font-weight-bold" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="public/plugins/global/plugins.bundle.js"></script>
+		<script src="public/plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="public/js/scripts.bundle.js"></script>
+		<script src="public/js/controllers/index.js"></script>
+	</body>
+</html>
