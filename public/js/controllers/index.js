@@ -63,10 +63,10 @@ let initKtDatatable = function(url) {
                     <div class="dropdown dropdown-inline">\
                         <span><i id="copy_button" value ="'+row.name+'"class="fa fa-copy" style="cursor: pointer; color: rgb(140, 141, 141);"></i></span>\
                         <a href="https://www.google.com.br/search?source=hp&ei=HCOQX-C-O9G95OUP99ma8AE&q=' + row.name + '" target="_blank">\
-                            <img alt="google" src="https://i1.wp.com/www.androidawareness.com/wp-content/uploads/2018/10/google-icon.png?fit=500%2C500" width="50" height="50">\
+                            <i class="fa fa-google" style="font-size:18px;color:black;cursor: pointer;"></i>\
                         </a>\
                         <a href="https://web.facebook.com/search/top/?q=' + row.name + '" target="_blank">\
-                            <img alt="google" src="https://i.pinimg.com/originals/4f/6e/cc/4f6ecc0091be306bc51e4c0c554ee6e4.png" width=30" height="30">\
+                            <i class="fa fa-facebook" style="font-size:18px;color:#4267B2;cursor: pointer;"></i>\
                         </a>\
                     </div>\
                 ';

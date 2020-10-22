@@ -6,6 +6,7 @@
         <meta name="description" content="Single and group record selection"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"/> 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/font-awesome.min.css">
 		<link href="public/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
 		<link href="public/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css"/>
 		<link href="public/css/style.bundle.css" rel="stylesheet" type="text/css"/>
@@ -21,8 +22,13 @@
 			* {box-sizing: border-box}
 			.container {
 			  width: 100%;
-			  background-color: #ddd;
 			  margin-bottom: 50px;
+			  background-color:transparent;
+			}
+			body {
+    			background-image: url('https://cdn.kampana.digital/wp-content/uploads/2020/09/slide-bg.png');
+    			background-position: center top;
+    			background-size: auto;
 			}
 			.skills {
 			  text-align: right;
@@ -43,20 +49,20 @@
 			}
 			</style>
 	</head>
-	<body style="background-image: url('https://cdn.kampana.digital/wp-content/uploads/2020/09/slide-bg.png')">
-	<div class="container" style="background-color:transparent;">
+	<body>
+	<div class="container">
 		<div class="card card-custom gutter-b mt-8">
 			<div class="card-header flex-wrap border-0 pt-6 pb-0">
+				<div class="col-1 card-title">
+					<a href="https://kampana.digital" target="_blank">
+						<img src="https://cdn.kampana.digital/wp-content/uploads/2020/09/logo.png" alt="kampana-logo" width="250px">
+					</a>
+				</div>
 				<div class="card-title">
 					<h3 class="card-label">
 						Interesses Secretos Facebook - Kampana Digital
 						<span class="d-block text-muted pt-2 font-size-sm">Percepções de Interesses para anúncios na plataforma do Facebook</span>
 					</h3>
-				</div>
-				<div class="col-1 card-title ml-40">
-					<a href="https://kampana.digital" target="_blank">
-						<img src="https://cdn.kampana.digital/wp-content/uploads/2020/09/logo.png" alt="kampana-logo" width="250px">
-					</a>
 				</div>
 				<div class="card-toolbar">
 				</div>
@@ -64,24 +70,24 @@
 			<div class="card-body">
 		<div class="mb-7">
 			<div class="row align-items-center">
-				<div class="col-lg-5 col-xl-5">
+				<div class="col-lg-5 col-xl-10">
 					<div class="input-icon">
 						<input type="text" class="form-control" placeholder="Digite o tema de interesse..." id="kt_datatable_search_query"/>
 						<span><i class="flaticon2-search-1 text-muted"></i></span>
 					</div>
 				</div>
-				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search">
-					<button style="color:#fff; background-color:#AB21FD" type="button" id="search_button" class="btn btn-light px-6 font-weight-bold">
+				<div class="col-lg-3 col-xl-2 mt-5 mt-lg-0 collapse" id="kt_datatable_search">
+					<button style="color:#fff; background-color:#AB21FD" type="button" id="search_button" class="btn btn-light px-6 w-100">
 						Pesquisar
 					</button>
 				</div>
-				<div class="col-lg-3 col-xl-4 mt-5 mt-lg-0 collapse" id="kt_datatable_search_reflash">
-					<button style="color:#fff; background-color:#AB21FD" type="button" id="reflash_button" class="btn btn-light px-6 font-weight-bold">
+				<div class="col-lg-3 col-xl-2 mt-5 mt-lg-0 collapse" id="kt_datatable_search_reflash">
+					<button style="color:#fff; background-color:#AB21FD" type="button" id="reflash_button" class="btn btn-light px-6 w-100">
 						Nova pesquisa
 					</button>
 				</div>
-				<div class="col-lg-3 col-xl-4 mt-5 lg-0 mt-5 collapse" id="kt_datatable_selected_results">
-					<span style="color:#fff; background-color:#209e00" class="btn btn-light-success px-6 font-weight-bold" id="search_result">0</span>
+				<div class="col-lg-3 col-xl-12 mt-5 lg-0 mt-5 text-center collapse" id="kt_datatable_selected_results">
+					<span class="btn btn-light-success px-6 font-weight-bold" id="search_result">0</span>
 				</div>
 			</div>
 		</div>
