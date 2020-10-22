@@ -62,12 +62,6 @@ let initKtDatatable = function(url) {
                 return '\
                     <div class="dropdown dropdown-inline">\
                         <span><i id="copy_button" value ="'+row.name+'"class="fa fa-copy" style="cursor: pointer; color: rgb(140, 141, 141);"></i></span>\
-                        <a href="https://www.google.com.br/search?source=hp&ei=HCOQX-C-O9G95OUP99ma8AE&q=' + row.name + '" target="_blank">\
-                            <i class="fa fa-google" style="font-size:18px;color:black;cursor: pointer;"></i>\
-                        </a>\
-                        <a href="https://web.facebook.com/search/top/?q=' + row.name + '" target="_blank">\
-                            <i class="fa fa-facebook" style="font-size:18px;color:#4267B2;cursor: pointer;"></i>\
-                        </a>\
                     </div>\
                 ';
             },
