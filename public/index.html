@@ -270,7 +270,7 @@
 					try {
 						$('#kt_datatable_search_query').prop('disabled', true);
 						let search_input = $('#kt_datatable_search_query').val()
-						let authorization = (await axios.get("https://graph.facebook.com/oauth/access_token?client_id=" + CLIENT_ID + "&client_secret=" + CLIENT_SECRET + "&grant_type=client_credentials")).data;
+						let authorization = (await axios.get("https://graph.facebook.com/oauth/access_token?client_id=" + process.env.CLIENT_ID + "&client_secret=" + process.env.CLIENT_SECRET + "&grant_type=client_credentials")).data;
 						let interesses_url = "https://graph.facebook.com/search?type=adinterest&q=[" + search_input + "]&limit=10000&locale=pt_BR&access_token=" + authorization.access_token + "";
 						let count = (await axios.get(interesses_url)).data;
 						if (count.data) {
